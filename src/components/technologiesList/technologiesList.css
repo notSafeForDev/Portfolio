@@ -1,0 +1,17 @@
+.technologies_list ul {
+    list-style-type: none;
+}
+
+.technologies_list ul>li,
+.technologies_list ul>li>p,
+.technologies_list ul>li>a {
+    margin-bottom: 5px;
+}
+
+.technologies_list ul>li>a {
+    margin-right: 40px;
+}
+
+.technologies_list ul>li:before {
+    content: "— ";
+}

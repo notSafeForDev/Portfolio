@@ -10,6 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s;
+}
+
+.mobile_game div:hover {
+    translate: 0 -6px;
 }
 
 .mobile_game img {

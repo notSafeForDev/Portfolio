@@ -190,21 +190,3 @@ p.centered {
 .spacer_large {
     height: 100px;
 }
-
-ul {
-    list-style-type: none;
-}
-
-ul>li,
-ul>li>p,
-ul>li>a {
-    margin-bottom: 5px;
-}
-
-ul>li>a {
-    margin-right: 40px;
-}
-
-ul>li:before {
-    content: "— ";
-}

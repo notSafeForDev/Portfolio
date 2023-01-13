@@ -1,8 +1,9 @@
 <script lang="ts">
 import MobileGame from '../mobileGame/mobileGame.vue';
+import TechnologiesList from '../technologiesList/technologiesList.vue';
 
 export default {
-    components: { MobileGame }
+    components: { MobileGame, TechnologiesList }
 }
 </script>
 
@@ -23,13 +24,11 @@ export default {
             with my cousin and a friend of his.</p>
         <p>We ended up releasing Coco Roll on iOS and Android. Whereas Snake+ stayed in the prototype stages.</p>
         <div class="spacer_small"></div>
-        <h3>Technologies</h3>
-        <ul>
-            <li><a href="https://unity.com/">Unity</a>2D & 3D game engine</li>
-            <li><a href="https://reactjs.org/">Csharp</a>Programming language</li>
-            <li><a href="https://ephtracy.github.io/">MagicaVoxel</a>Voxel based 3D modeling software</li>
-            <li><a href="https://www.adobe.com/se/products/animate.html">Adobe Animate</a>Used for creating 2D art and
-                animations</li>
-        </ul>
+        <TechnologiesList :items="[
+            { name: 'Unity', description: '2D & 3D game engine', link: 'https://unity.com/' },
+            { name: 'Csharp', description: 'Programming language', link: 'https://en.wikipedia.org/wiki/C_Sharp_(programming_language)' },
+            { name: 'MagicaVoxel', description: 'Voxel based 3D modeling software', link: 'https://ephtracy.github.io/' },
+            { name: 'Adobe Animate', description: 'Vector based art and animations software', link: 'https://www.adobe.com/products/animate.html' }
+        ]" />
     </div>
 </template>

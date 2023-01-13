@@ -1,9 +1,11 @@
 <script lang="ts">
+import TechnologiesList from '../technologiesList/technologiesList.vue';
 import Thumbnail from '../thumbnail/thumbnail.vue';
 
 export default {
     components: {
-        Thumbnail
+        Thumbnail,
+        TechnologiesList
     },
     data() {
         return {
@@ -59,12 +61,11 @@ export default {
                 MEGAWAYS</a>.
         </p>
         <div class="spacer_small"></div>
-        <h3>Technologies</h3>
-        <ul>
-            <li><a href="https://pixijs.com/">PixiJS</a>WebGL rendering framework</li>
-            <li><a href="https://reactjs.org/">React</a>Rendering framework</li>
-            <li><a href="https://redux.js.org/">Redux</a>State management</li>
-            <li><a href="https://redux-saga.js.org/">Redux-Saga</a>Used to create asynchronous application flows</li>
-        </ul>
+        <TechnologiesList :items="[
+            { name: 'PixiJS', description: 'WebGL rendering framework', link: 'https://pixijs.com/' },
+            { name: 'React', description: 'Used for templating of PixiJS elements and UI', link: 'https://reactjs.org/' },
+            { name: 'Redux', description: 'State management', link: 'https://redux.js.org/' },
+            { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
+        ]" />
     </div>
 </template>

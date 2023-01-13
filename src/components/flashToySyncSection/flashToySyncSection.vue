@@ -1,9 +1,10 @@
 <script lang="ts">
 import ImageLink from '../imageLink/imageLink.vue';
 import Sticker from '../sticker/sticker.vue';
+import TechnologiesList from '../technologiesList/technologiesList.vue';
 
 export default {
-    components: { ImageLink, Sticker }
+    components: { ImageLink, Sticker, TechnologiesList }
 }
 </script>
 
@@ -31,17 +32,14 @@ export default {
             into
             development, back in 2005.
         </p>
-        <a href="https://github.com/notSafeForDev/flash-toy-sync-v3"
-            target="_blank">https://github.com/notSafeForDev/flash-toy-sync-v3</a>
+        <a href="https://github.com/notSafeForDev/flash-toy-sync-v3" target="_blank">Github
+            (https://github.com/notSafeForDev/flash-toy-sync-v3)</a>
         <div class="spacer_small"></div>
-        <h3>Technologies</h3>
-        <ul>
-            <li><a href="https://get.adobe.com/flashplayer/about">Flash</a>Multimedia software platform</li>
-            <li><a href="https://en.wikipedia.org/wiki/ActionScript">ActionScript 3.0</a>Primary programing language
-            </li>
-            <li><a href="https://en.wikipedia.org/wiki/ActionScript">ActionScript 2.0</a>Secondary programing language,
-                for supporting AS2 based flash games</li>
-            <li><a href="https://nodejs.org/en/">Node.js</a>Used for server to generate scripts</li>
-        </ul>
+        <TechnologiesList :items="[
+            { name: 'Flash', description: 'Multimedia software platform', link: 'https://get.adobe.com/flashplayer/about' },
+            { name: 'ActionScript 3.0', description: 'Primary programing language', link: 'https://en.wikipedia.org/wiki/ActionScript' },
+            { name: 'ActionScript 2.0', description: 'Secondary programing language to support older flash games', link: 'https://en.wikipedia.org/wiki/ActionScript' },
+            { name: 'Node.js', description: 'Used for server to generate scripts', link: 'https://nodejs.org/en/' }
+        ]" />
     </div>
 </template>
