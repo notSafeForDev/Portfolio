@@ -68,6 +68,11 @@ body {
     margin-bottom: 20px;
 }
 
+.phone_grid {
+    grid-template-columns: repeat(auto-fit, 400px);
+    justify-content: center;
+}
+
 @media (max-width: 770px) {
     .grid {
         grid-template-columns: repeat(auto-fit, 100%);

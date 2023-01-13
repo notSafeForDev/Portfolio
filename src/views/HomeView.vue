@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import FlashToySyncSection from "@/components/flashToySyncSection/flashToySyncSection.vue";
+import MobileGamesSection from "@/components/mobileGamesSection/mobileGamesSection.vue";
 import ProfilePicture from "@/components/profilePicture/ProfilePicture.vue";
 import SlotGamesSection from "@/components/slotGamesSection/slotGamesSection.vue";
+import VideoPlayerSection from "@/components/videoPlayerSection/videoPlayerSection.vue";
 </script>
 
 <template>
@@ -21,6 +23,9 @@ import SlotGamesSection from "@/components/slotGamesSection/slotGamesSection.vue
       <p>This website was built using the Vue framework, as a way to learn the framework.</p>
     </div>
     <SlotGamesSection />
+    <MobileGamesSection />
+    <VideoPlayerSection />
     <FlashToySyncSection />
+    <div class="spacer_large"></div>
   </div>
 </template>

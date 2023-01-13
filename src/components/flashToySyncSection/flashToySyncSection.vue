@@ -36,9 +36,12 @@ export default {
         <div class="spacer_small"></div>
         <h3>Technologies</h3>
         <ul>
-            <li><a href="https://pixijs.com/">Flash</a>Multimedia software platform</li>
-            <li><a href="https://reactjs.org/">ActionScript 2.0</a>Programing Language</li>
-            <li><a href="https://reactjs.org/">ActionScript 3.0</a>Programing Language</li>
+            <li><a href="https://get.adobe.com/flashplayer/about">Flash</a>Multimedia software platform</li>
+            <li><a href="https://en.wikipedia.org/wiki/ActionScript">ActionScript 3.0</a>Primary programing language
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/ActionScript">ActionScript 2.0</a>Secondary programing language,
+                for supporting AS2 based flash games</li>
+            <li><a href="https://nodejs.org/en/">Node.js</a>Used for server to generate scripts</li>
         </ul>
     </div>
 </template>

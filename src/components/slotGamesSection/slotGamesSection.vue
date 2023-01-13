@@ -39,7 +39,7 @@ export default {
         <div class="black full_width slanted_5 overlap_down_200px highlight_bottom">
             <div class="spacer_large"></div>
         </div>
-        <h2>Online Slot Games</h2>
+        <h2>Online Casino Games</h2>
         <h3>2019 - 2023</h3>
         <div class="grid">
             <Thumbnail v-for="thumbnail in thumbnails.slice(0, countLimit)" :title="thumbnail.title"

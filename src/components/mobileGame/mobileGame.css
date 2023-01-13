@@ -1,0 +1,29 @@
+.mobile_game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mobile_game div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile_game img {
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.mobile_game iframe {
+    background-color: black;
+    border-radius: 5%;
+    max-width: 310px;
+    width: 80%;
+    translate: 0 -3px;
+    scale: 95%;
+}
