@@ -13,6 +13,7 @@ export default {
     <a class="image_link" :title="title" :href="href" target="_blank">
         <div>
             <img :src="src" />
+            <slot></slot>
         </div>
     </a>
 </template>

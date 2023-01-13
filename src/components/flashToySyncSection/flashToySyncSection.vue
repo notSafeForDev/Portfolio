@@ -1,8 +1,9 @@
 <script lang="ts">
 import ImageLink from '../imageLink/imageLink.vue';
+import Sticker from '../sticker/sticker.vue';
 
 export default {
-    components: { ImageLink }
+    components: { ImageLink, Sticker }
 }
 </script>
 
@@ -18,7 +19,9 @@ export default {
                 <img src="https://i.imgur.com/loT4QVr.png" />
             </div>
         </a> -->
-        <ImageLink title="flash toy sync" href="https://imgur.com/a/lkGZJ4z" src="https://i.imgur.com/loT4QVr.png" />
+        <ImageLink title="flash toy sync" href="https://imgur.com/a/lkGZJ4z" src="https://i.imgur.com/loT4QVr.png">
+            <Sticker text="ADULT ONLY" />
+        </ImageLink>
         <p class="inline_block">My journey with <a href="https://www.thehandy.com/" target="_blank">theHandy</a> started
             here.</p>
         <p>

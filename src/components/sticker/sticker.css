@@ -1,0 +1,13 @@
+.sticker {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    rotate: 20deg;
+    color: #fdcb40;
+    padding: 30px;
+    font-size: 2em;
+    font-weight: bold;
+    outline: 2px dashed #fdcb40;
+    border-radius: 15px;
+    filter: drop-shadow(0px 3px 0px #df7e2e);
+}

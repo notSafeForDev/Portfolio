@@ -1,4 +1,5 @@
 <script lang="ts">
+import "./sticker.css";
 export default {
     props: {
         text: {
