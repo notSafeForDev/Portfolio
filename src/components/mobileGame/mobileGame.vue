@@ -33,7 +33,7 @@ export default {
     <div class="mobile_game">
         <h3 class="centered">{{ name }}</h3>
         <div>
-            <iframe ref="iframe" width="560" height="315" :src="videoUrl" title="YouTube video player" frameborder="0"
+            <iframe ref="iframe" width="1120" height="630" :src="videoUrl" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
             <img src="@/assets/images/phone_overlay.png" />

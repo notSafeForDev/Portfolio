@@ -18,7 +18,7 @@ import VideoPlayerSection from "@/components/videoPlayerSection/videoPlayerSecti
       </div>
     </div>
     <div>
-      <div class="spacer_large"></div>
+      <div class="spacer_medium"></div>
       <p>I'm Tobias Rheindorf, a developer that really gives it all for exciting projects!</p>
       <p>This website was built using the Vue framework, as a way to learn the framework.</p>
     </div>

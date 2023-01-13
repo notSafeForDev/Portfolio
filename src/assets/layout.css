@@ -62,15 +62,15 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 200px);
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
 }
 
 .phone_grid {
-    grid-template-columns: repeat(auto-fit, 400px);
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 350px);
+    justify-content: space-around;
 }
 
 @media (max-width: 770px) {
@@ -91,7 +91,7 @@ img {
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     line-height: 1em;
     margin-bottom: 0.5em;
 }
@@ -101,7 +101,7 @@ h1.centered {
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 h2.centered {
@@ -110,7 +110,7 @@ h2.centered {
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
@@ -120,17 +120,19 @@ h3.centered {
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
 }
 
 a {
+    font-size: 1em;
     border-radius: 10px;
     margin-bottom: 20px;
     display: inline-block;
 }
 
 p {
+    font-size: 0.8em;
     line-height: 2.2em;
     font-weight: 500;
     margin-bottom: 20px;
