@@ -1,0 +1,24 @@
+a.image_link {
+    overflow: hidden;
+    transition: all 0.25s;
+    line-height: 0;
+    margin-bottom: 20px;
+}
+
+a.image_link>div {
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+a.image_link>div>img {
+    transition: all 0.25s;
+}
+
+a.image_link:hover {
+    scale: 1;
+}
+
+a.image_link:hover>div>img {
+    transform: scale(1.1);
+}
