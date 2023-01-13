@@ -1,0 +1,7 @@
+.profile_picture {
+    width: 200px;
+    border-radius: 50% 10% 50% 10%;
+    display: block;
+    margin: 10px auto;
+    z-index: -1;
+}
