@@ -1,5 +1,8 @@
 <script lang="ts">
 import "./ProfilePicture.css";
+export default {
+
+}
 </script>
 
 <template>
