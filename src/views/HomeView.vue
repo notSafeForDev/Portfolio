@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ProfilePicture from "@/components/profilePicture/ProfilePicture.vue";
-import ImgurEmbed from "@/components/ImgurEmbed/ImgurEmbed.vue";
 import "./HomeView.css";
 </script>
 
@@ -25,7 +24,6 @@ import "./HomeView.css";
       </div>
       <h2>Flash Toy Sync</h2>
       <a href="https://imgur.com/a/lkGZJ4z" target="_blank"><img src="https://i.imgur.com/loT4QVr.png" /></a>
-      <!-- <ImgurEmbed /> -->
       <p>My journey with theHandy started here.</p>
       <p>An application that I built to allow almost any Flash animation found on the net to control theHandy. Built to
         breath
