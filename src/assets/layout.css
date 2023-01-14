@@ -14,9 +14,10 @@ body {
     margin-right: auto;
     width: 70%;
     overflow-y: clip;
+    padding-bottom: 100px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .content {
         width: calc(100% - 40px);
         margin-left: auto;
@@ -26,7 +27,8 @@ body {
 
 @media (min-width: 1000px) {
     .content {
-        width: 960px;
+        width: 70%;
+        max-width: 1000px;
     }
 }
 
@@ -62,10 +64,16 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 460px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
 }
 
 .phone_grid {
@@ -73,15 +81,13 @@ body {
     justify-content: space-around;
 }
 
-@media (max-width: 770px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, 100%);
-    }
-}
-
 img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+}
+
+.centered {
+    text-align: center;
 }
 
 .centered_vertically {
@@ -90,66 +96,21 @@ img {
     justify-content: center;
 }
 
-h1 {
-    font-size: 3em;
-    line-height: 1em;
-    margin-bottom: 0.5em;
-}
-
-h1.centered {
-    text-align: center;
-}
-
-h2 {
-    font-size: 2.5em;
-}
-
 h2.centered {
-    text-align: center;
     width: 100%;
-}
-
-h3 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
 }
 
 h3.centered {
-    text-align: center;
     width: 100%;
-}
-
-h4 {
-    font-size: 1em;
-    font-weight: 600;
-}
-
-a {
-    font-size: 1em;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-p {
-    font-size: 0.8em;
-    line-height: 2.2em;
-    font-weight: 500;
-    margin-bottom: 20px;
-    display: block;
-}
-
-p>a {
-    display: contents;
-}
-
-.inline_block {
-    display: inline-block;
 }
 
 p.centered {
     text-align: center;
     width: 100%;
+}
+
+.inline_block {
+    display: inline-block;
 }
 
 .slanted_5 {
@@ -159,6 +120,15 @@ p.centered {
 
 .slanted_5>* {
     rotate: -5deg;
+}
+
+.slanted_-10 {
+    z-index: -1;
+    rotate: -10deg;
+}
+
+.slanted_-10>* {
+    rotate: 10deg;
 }
 
 .overlap_down_200px {
@@ -171,7 +141,7 @@ p.centered {
     translate: -30%;
 }
 
-.full_width.slanted_5 {
+.full_width.slanted {
     width: 150vw;
 }
 

@@ -1,5 +1,5 @@
 .video_player {
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-bottom);
 }
 
 .video_player img {

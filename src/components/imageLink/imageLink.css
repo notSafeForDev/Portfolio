@@ -2,13 +2,12 @@ a.image_link {
     overflow: hidden;
     transition: all 0.25s;
     line-height: 0;
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-bottom);
 }
 
 a.image_link>div {
     overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: var(--border-radius);
 }
 
 a.image_link>div>img {

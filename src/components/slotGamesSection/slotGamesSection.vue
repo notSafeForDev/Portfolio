@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         onResize() {
-            this.countLimit = window.innerWidth <= 770 ? 4 : Infinity;
+            this.countLimit = window.innerWidth <= 460 ? 4 : Infinity;
         },
     },
     mounted() {
@@ -38,7 +38,7 @@ export default {
 
 <template>
     <div>
-        <div class="black full_width slanted_5 overlap_down_200px highlight_bottom">
+        <div class="black full_width slanted slanted_5 overlap_down_200px highlight_bottom">
             <div class="spacer_large"></div>
         </div>
         <h2>Online Casino Games</h2>

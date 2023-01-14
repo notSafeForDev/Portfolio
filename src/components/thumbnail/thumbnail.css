@@ -1,6 +1,6 @@
 .thumbnail {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     transition: all 0.25s;
     position: relative;
     display: flex;

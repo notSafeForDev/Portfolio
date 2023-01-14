@@ -1,0 +1,15 @@
+body {
+    --dark-red: rgb(163, 41, 47);
+    --muted-red: rgb(238, 79, 87);
+    --red: rgb(255 67 76);
+    --white: white;
+    --black: rgb(27 27 28);
+    --dark-gray: rgb(32, 32, 32);
+    --gray: rgb(169 169 169);
+    --link-blue: #75b2fd;
+    --cyan: rgb(18, 227, 255);
+    --shadow: rgba(0, 0, 0, 0.2);
+
+    --border-radius: 10px;
+    --margin-bottom: 20px;
+}
