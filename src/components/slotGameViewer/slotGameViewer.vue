@@ -3,6 +3,7 @@ import type { PropType } from "vue";
 import "./slotGameViewer.css";
 
 type publisher = "yggdrasil" | "relax";
+type position = { x: number, y: number };
 
 export default {
     props: {
@@ -10,11 +11,11 @@ export default {
         publisher: { type: String as PropType<publisher>, required: true },
         gameName: { type: String, required: true },
         gameId: { type: String, required: true },
-        openOffsetX: { type: Number, required: true }
+        openOffset: { type: Object as PropType<position>, required: true }
     },
     data() {
         return {
-            currentOffsetX: 0
+            currentOffset: { x: 0, y: 0 }
         }
     },
     emits: {
@@ -52,14 +53,19 @@ export default {
         onWindowResize();
     },
     watch: {
-        openOffsetX(value) {
-            this.currentOffsetX = value;
-
+        openOffset(value: position) {
+            this.currentOffset = JSON.parse(JSON.stringify(value));
             const onRequestedAnimationFrame = () => {
-                if (this.currentOffsetX < -1 || this.currentOffsetX > 1) {
+                if (this.currentOffset.x !== 0 && this.currentOffset.x !== 0) {
                     requestAnimationFrame(onRequestedAnimationFrame);
                 }
-                this.currentOffsetX -= this.currentOffsetX * 0.1;
+                this.currentOffset = {
+                    x: this.currentOffset.x * 0.74,
+                    y: this.currentOffset.y * 0.74
+                }
+                if (value.x > 0 && this.currentOffset.x < 0 || value.x < 0 && this.currentOffset.x > 0) {
+                    this.currentOffset = { x: 0, y: 0 }
+                }
             }
 
             requestAnimationFrame(onRequestedAnimationFrame);
@@ -72,9 +78,9 @@ export default {
     <div :class="'slot_game_viewer' + (shouldShow ? '' : ' hidden')" ref="parent">
         <div class="background" @click="closeButtonClicked"></div>
         <h2>{{ gameName }}</h2>
-        <div class="iframe_wrapper" :style="{ translate: `${currentOffsetX}px 0px` }">
-            <p v-if="gameId !== '-1'">Loading...</p>
-            <p v-if="gameId === '-1'">Game Unavailable</p>
+        <div class="iframe_wrapper" :style="{ translate: `${currentOffset.x}px ${currentOffset.y}px` }">
+            <p v-if="gameId !== '-1' && shouldShow">Loading...</p>
+            <p v-if="gameId === '-1' && shouldShow">Game Unavailable</p>
             <iframe v-if="shouldShow" id="gameFrame" class="amG4g" :src="iframeSource" loading="eager" frameborder="0"
                 scrolling="no" allow="autoplay"
                 sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-top-navigation-by-user-activation">

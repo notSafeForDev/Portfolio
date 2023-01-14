@@ -37,19 +37,17 @@
     align-items: center;
     background-color: black;
     border-radius: var(--border-radius);
-    transition: scale 0.25s;
-    scale: 1;
+    transition: scale 0.2s;
 }
 
 .slot_game_viewer.hidden .iframe_wrapper {
-    scale: 0.7;
+    scale: 0.2;
 }
 
 .slot_game_viewer .iframe_wrapper p {
     position: absolute;
     width: 100%;
     top: 50%;
-    translate: 0 -50%;
     text-align: center;
 }
 

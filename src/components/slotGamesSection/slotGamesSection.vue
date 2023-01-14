@@ -13,6 +13,8 @@ type thumbnail = {
     imageUrlSuffix: string
 }
 
+type position = { x: number, y: number }
+
 export default {
     components: {
         Thumbnail,
@@ -33,6 +35,8 @@ export default {
             { title: "Net Gains", publisher: "relax", id: "netgains", hrefSuffix: "net-gains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
         ];
 
+        let openOffset: position = { x: 0, y: 0 }
+
         return {
             countLimit: Infinity,
             thumbnails,
@@ -40,7 +44,7 @@ export default {
             gameName: "",
             publisher: "yggdrasil" as publisher,
             gameId: "",
-            openOffsetX: -1
+            openOffset
         }
     },
     methods: {
@@ -52,7 +56,10 @@ export default {
             this.gameName = thumbnail.title;
             this.publisher = thumbnail.publisher;
             this.gameId = thumbnail.id;
-            this.openOffsetX = e.clientX - (window.innerWidth / 2);
+            this.openOffset = {
+                x: (e.clientX - (window.innerWidth / 2)) * 4,
+                y: (e.clientY - (window.innerHeight / 2)) * 4
+            };
         },
         onSlotGameViewerClose() {
             this.shouldShowGame = false;
@@ -99,6 +106,6 @@ export default {
             { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
         ]" />
         <SlotGameViewer :should-show="shouldShowGame" :game-name="gameName" :publisher="publisher" :game-id="gameId"
-            :open-offset-x="openOffsetX" @onClose="onSlotGameViewerClose" />
+            :open-offset="openOffset" @onClose="onSlotGameViewerClose" />
     </div>
 </template>
