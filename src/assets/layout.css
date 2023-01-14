@@ -86,6 +86,10 @@ img {
     border-radius: var(--border-radius);
 }
 
+.hidden {
+    display: none !important;
+}
+
 .centered {
     text-align: center;
 }
@@ -134,6 +138,11 @@ p.centered {
 .overlap_down_200px {
     padding-bottom: 200px;
     margin-bottom: -200px;
+}
+
+.overlap_down_260px {
+    padding-bottom: 260px;
+    margin-bottom: -260px;
 }
 
 .full_width {

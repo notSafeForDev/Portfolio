@@ -10,7 +10,7 @@ export default {
 
 <template>
     <div>
-        <div class="black full_width slanted slanted_5 overlap_down_200px highlight_bottom">
+        <div class="dark_gray full_width slanted slanted_5 overlap_down_200px highlight_bottom">
             <div class="spacer_large"></div>
         </div>
         <h2>Flash Toy Sync</h2>

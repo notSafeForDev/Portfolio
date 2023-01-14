@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FlashToySyncSection from "@/components/flashToySyncSection/flashToySyncSection.vue";
+import FooterSection from "@/components/footerSection/footerSection.vue";
 import HeroSection from "@/components/heroSection/heroSection.vue";
 import MobileGamesSection from "@/components/mobileGamesSection/mobileGamesSection.vue";
 import ProfilePicture from "@/components/profilePicture/ProfilePicture.vue";
@@ -14,5 +15,6 @@ import VideoPlayerSection from "@/components/videoPlayerSection/videoPlayerSecti
     <MobileGamesSection />
     <VideoPlayerSection />
     <FlashToySyncSection />
+    <FooterSection />
   </div>
 </template>

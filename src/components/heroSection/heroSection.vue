@@ -8,6 +8,7 @@ export default {
 </script>
 
 <template>
+    <div class="pitch_black full_width slanted slanted_5 overlap_down_260px"></div>
     <div class="header_grid">
         <div class="main_cell centered_vertically">
             <h1>Tobias Rheindorf</h1>

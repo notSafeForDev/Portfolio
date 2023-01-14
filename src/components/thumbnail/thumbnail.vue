@@ -2,15 +2,15 @@
 import "./thumbnail.css";
 export default {
     props: {
-        title: String,
-        href: String,
-        imageSrc: String
+        title: { type: String, required: true },
+        href: { type: String, required: false },
+        imageSrc: { type: String, required: true }
     }
 }
 </script>
 
 <template>
-    <a :title="title + ' thumbnail'" class="thumbnail" :href="href" target="_blank">
+    <a :title="title.toLowerCase() + ' thumbnail'" class="thumbnail" :href="href" target="_blank">
         <img :src="imageSrc" />
         <span>{{ title }}</span>
     </a>

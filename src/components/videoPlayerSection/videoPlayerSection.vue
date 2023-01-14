@@ -10,10 +10,10 @@ export default {
 
 <template>
     <div>
-        <div class="black full_width slanted slanted_5 overlap_down_200px highlight_bottom">
+        <div class="dark_gray full_width slanted slanted_5 overlap_down_200px highlight_bottom">
             <div class="spacer_large"></div>
         </div>
-        <h2>Video Player</h2>
+        <h2>VR Video Player</h2>
         <h3>2022</h3>
         <VideoPlayer>
             <Sticker text="18+ Adult Only" />

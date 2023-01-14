@@ -1,33 +1,64 @@
 <script lang="ts">
+import SlotGameViewer from '../slotGameViewer/slotGameViewer.vue';
 import TechnologiesList from '../technologiesList/technologiesList.vue';
 import Thumbnail from '../thumbnail/thumbnail.vue';
+
+type publisher = "yggdrasil" | "relax";
+
+type thumbnail = {
+    title: string,
+    publisher: publisher,
+    id: string,
+    hrefSuffix: string,
+    imageUrlSuffix: string
+}
 
 export default {
     components: {
         Thumbnail,
-        TechnologiesList
+        TechnologiesList,
+        SlotGameViewer
     },
     data() {
+        let thumbnails: thumbnail[] = [
+            { title: "Jackpot Raiders", publisher: "yggdrasil", id: "7361", hrefSuffix: "jackpot-raiders", imageUrlSuffix: "X0LjA0151/ndD1rt8M1dbDBA-opt.jpg" },
+            { title: "Aldo's Journey", publisher: "yggdrasil", id: "-1", hrefSuffix: "aldo-s-journey", imageUrlSuffix: "DlVZLmrwP/abblUr741Zjrr-opt.jpg" },
+            { title: "Lucky Neko Gigablox", publisher: "yggdrasil", id: "10124", hrefSuffix: "lucky-neko-gigablox", imageUrlSuffix: "jJy5A9V7E/yBd3vUaKdAEQ7E.jpg" },
+            { title: "Hades Gigablox", publisher: "yggdrasil", id: "10125", hrefSuffix: "hades-gigablox", imageUrlSuffix: "aeMR9gj3r/rleGulrxw0KDj.jpg" },
+            { title: "Easter Island 2", publisher: "yggdrasil", id: "7396", hrefSuffix: "easter-island-2", imageUrlSuffix: "LGX1jxxql/dLJMfjQp44EPA.jpg" },
+            { title: "Cluster Tumble", publisher: "relax", id: "clustertumble", hrefSuffix: "cluster-tumble", imageUrlSuffix: "VPP79vmxm/Q3xQCMMeDDrN8.jpg" },
+            { title: "Beast Mode", publisher: "relax", id: "beastmode", hrefSuffix: "beast-mode", imageUrlSuffix: "1D9BoP3KN/3vO7Hx7dkJWPD.jpg" },
+            { title: "Temple Tumble 2 Dream Drop", publisher: "relax", id: "templetumble2dd", hrefSuffix: "temple-tumble-2-dream-drop", imageUrlSuffix: "MqXY5yA4v/BpB4txMdpxnKX.jpg" },
+            { title: "Dead Riders Trail", publisher: "relax", id: "deadriderstrail", hrefSuffix: "dead-riders-trail", imageUrlSuffix: "bvnQwl93X/Ll0QHldvJrYEN.jpg" },
+            { title: "Net Gains", publisher: "relax", id: "netgains", hrefSuffix: "net-gains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
+        ];
+
         return {
             countLimit: Infinity,
-            thumbnails: [
-                { title: "jackpot raiders", hrefSuffix: "jackpot-raiders", imageUrlSuffix: "X0LjA0151/ndD1rt8M1dbDBA-opt.jpg" },
-                { title: "aldo's journey", hrefSuffix: "aldo-s-journey", imageUrlSuffix: "DlVZLmrwP/abblUr741Zjrr-opt.jpg" },
-                { title: "lucky neko gigablox", hrefSuffix: "lucky-neko-gigablox", imageUrlSuffix: "jJy5A9V7E/yBd3vUaKdAEQ7E.jpg" },
-                { title: "hades gigablox", hrefSuffix: "hades-gigablox", imageUrlSuffix: "aeMR9gj3r/rleGulrxw0KDj.jpg" },
-                { title: "easter island 2", hrefSuffix: "easter-island-2", imageUrlSuffix: "LGX1jxxql/dLJMfjQp44EPA.jpg" },
-                { title: "cluster tumble", hrefSuffix: "cluster-tumble", imageUrlSuffix: "VPP79vmxm/Q3xQCMMeDDrN8.jpg" },
-                { title: "beast mode", hrefSuffix: "beast-mode", imageUrlSuffix: "1D9BoP3KN/3vO7Hx7dkJWPD.jpg" },
-                { title: "temple tumble 2 dream drop", hrefSuffix: "temple-tumble-2-dream-drop", imageUrlSuffix: "MqXY5yA4v/BpB4txMdpxnKX.jpg" },
-                { title: "dead riders trail", hrefSuffix: "dead-riders-trail", imageUrlSuffix: "bvnQwl93X/Ll0QHldvJrYEN.jpg" },
-                { title: "net gains", hrefSuffix: "net-gains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
-            ]
+            thumbnails,
+            shouldShowGame: false,
+            gameName: "",
+            publisher: "yggdrasil" as publisher,
+            gameId: "",
+            openOffsetX: -1
         }
     },
     methods: {
         onResize() {
             this.countLimit = window.innerWidth <= 460 ? 4 : Infinity;
         },
+        onThumbnailClick(thumbnail: thumbnail, e: PointerEvent) {
+            this.shouldShowGame = true;
+            this.gameName = thumbnail.title;
+            this.publisher = thumbnail.publisher;
+            this.gameId = thumbnail.id;
+            this.openOffsetX = e.clientX - (window.innerWidth / 2);
+        },
+        onSlotGameViewerClose() {
+            this.shouldShowGame = false;
+            this.gameName = "";
+            this.gameId = "";
+        }
     },
     mounted() {
         window.addEventListener("resize", this.onResize);
@@ -38,15 +69,15 @@ export default {
 
 <template>
     <div>
-        <div class="black full_width slanted slanted_5 overlap_down_200px highlight_bottom">
+        <div class="dark_gray full_width slanted slanted_5 overlap_down_200px highlight_bottom">
             <div class="spacer_large"></div>
         </div>
         <h2>Online Casino Games</h2>
         <h3>2019 - 2023</h3>
         <div class="grid">
             <Thumbnail v-for="thumbnail in thumbnails.slice(0, countLimit)" :title="thumbnail.title"
-                :href="'https://www.leovegas.com/en-row/game/' + thumbnail.hrefSuffix"
-                :image-src="'https://ik.imagekit.io/leovegas/lv/games/' + thumbnail.imageUrlSuffix" />
+                :image-src="'https://ik.imagekit.io/leovegas/lv/games/' + thumbnail.imageUrlSuffix"
+                @click="onThumbnailClick(thumbnail, $event)" />
             <p v-if="countLimit < Infinity" class="centered">{{
                 "And " + (thumbnails.length - countLimit) + " More..."
             }}</p>
@@ -67,5 +98,7 @@ export default {
             { name: 'Redux', description: 'State management', link: 'https://redux.js.org/' },
             { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
         ]" />
+        <SlotGameViewer :should-show="shouldShowGame" :game-name="gameName" :publisher="publisher" :game-id="gameId"
+            :open-offset-x="openOffsetX" @onClose="onSlotGameViewerClose" />
     </div>
 </template>

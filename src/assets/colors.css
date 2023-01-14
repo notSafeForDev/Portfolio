@@ -19,7 +19,11 @@ a:hover {
     color: var(--white);
 }
 
-div.black {
+div.pitch_black {
+    background-color: var(--pitch-black);
+}
+
+div.dark_gray {
     background-color: var(--dark-gray);
 }
 

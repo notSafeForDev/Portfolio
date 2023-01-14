@@ -10,10 +10,7 @@ type Item = {
 
 export default {
     props: {
-        items: {
-            type: Object as PropType<Item[]>,
-            required: true
-        }
+        items: { type: Object as PropType<Item[]>, required: true }
     }
 }
 </script>

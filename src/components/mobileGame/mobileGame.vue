@@ -2,18 +2,9 @@
 import "./mobileGame.css";
 export default {
     props: {
-        name: {
-            type: String,
-            required: true
-        },
-        videoUrl: {
-            type: String,
-            required: true
-        },
-        artStationUrl: {
-            type: String,
-            required: true
-        }
+        name: { type: String, required: true },
+        videoUrl: { type: String, required: true },
+        artStationUrl: { type: String, required: true }
     },
     mounted() {
         if (this.$refs.iframe instanceof HTMLIFrameElement === false) {
