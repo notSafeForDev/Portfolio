@@ -15,13 +15,8 @@ export default {
         </div>
         <h2>Flash Toy Sync</h2>
         <h3>2020 / 2022</h3>
-        <!-- <a title="flash toy sync" href="https://imgur.com/a/lkGZJ4z" target="_blank">
-            <div>
-                <img src="https://i.imgur.com/loT4QVr.png" />
-            </div>
-        </a> -->
         <ImageLink title="flash toy sync" href="https://imgur.com/a/lkGZJ4z" src="https://i.imgur.com/loT4QVr.png">
-            <Sticker text="ADULT ONLY" />
+            <Sticker text="18+ Adult Only" />
         </ImageLink>
         <p class="inline_block">My journey with <a href="https://www.thehandy.com/" target="_blank">theHandy</a> started
             here.</p>

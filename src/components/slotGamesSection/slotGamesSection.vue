@@ -63,7 +63,7 @@ export default {
         <div class="spacer_small"></div>
         <TechnologiesList :items="[
             { name: 'PixiJS', description: 'WebGL rendering framework', link: 'https://pixijs.com/' },
-            { name: 'React', description: 'Used for templating of PixiJS elements and UI', link: 'https://reactjs.org/' },
+            { name: 'React', description: 'Used for rendering PixiJS elements and UI', link: 'https://reactjs.org/' },
             { name: 'Redux', description: 'State management', link: 'https://redux.js.org/' },
             { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
         ]" />

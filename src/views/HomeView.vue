@@ -20,7 +20,8 @@ import VideoPlayerSection from "@/components/videoPlayerSection/videoPlayerSecti
     <div>
       <div class="spacer_medium"></div>
       <p>I'm Tobias Rheindorf, a developer that really gives it all for exciting projects!</p>
-      <p>This website was built using the Vue framework, as a way to learn the framework.</p>
+      <p>This site was built from scratch, as a fully responsive website using the <a href="https://vuejs.org/">Vue
+          Framework</a>.</p>
     </div>
     <SlotGamesSection />
     <MobileGamesSection />
