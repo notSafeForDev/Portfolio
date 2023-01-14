@@ -3,7 +3,7 @@ body {
     --muted-red: rgb(238, 79, 87);
     --red: rgb(255 67 76);
     --pitch-black: rgb(12 12 12);
-    --black: rgb(27 27 28);
+    --black: #1b1b1c;
     --dark-gray: rgb(32, 32, 32);
     --gray: rgb(169 169 169);
     --white: white;

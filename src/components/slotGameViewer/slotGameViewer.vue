@@ -3,20 +3,13 @@ import type { PropType } from "vue";
 import "./slotGameViewer.css";
 
 type publisher = "yggdrasil" | "relax";
-type position = { x: number, y: number };
 
 export default {
     props: {
         shouldShow: { type: Boolean, required: true },
         publisher: { type: String as PropType<publisher>, required: true },
         gameName: { type: String, required: true },
-        gameId: { type: String, required: true },
-        openOffset: { type: Object as PropType<position>, required: true }
-    },
-    data() {
-        return {
-            currentOffset: { x: 0, y: 0 }
-        }
+        gameId: { type: String, required: true }
     },
     emits: {
         onClose() { }
@@ -51,25 +44,6 @@ export default {
 
         window.addEventListener("resize", onWindowResize);
         onWindowResize();
-    },
-    watch: {
-        openOffset(value: position) {
-            this.currentOffset = JSON.parse(JSON.stringify(value));
-            const onRequestedAnimationFrame = () => {
-                if (this.currentOffset.x !== 0 && this.currentOffset.x !== 0) {
-                    requestAnimationFrame(onRequestedAnimationFrame);
-                }
-                this.currentOffset = {
-                    x: this.currentOffset.x * 0.74,
-                    y: this.currentOffset.y * 0.74
-                }
-                if (value.x > 0 && this.currentOffset.x < 0 || value.x < 0 && this.currentOffset.x > 0) {
-                    this.currentOffset = { x: 0, y: 0 }
-                }
-            }
-
-            requestAnimationFrame(onRequestedAnimationFrame);
-        }
     }
 }
 </script>
@@ -78,7 +52,7 @@ export default {
     <div :class="'slot_game_viewer' + (shouldShow ? '' : ' hidden')" ref="parent">
         <div class="background" @click="closeButtonClicked"></div>
         <h2>{{ gameName }}</h2>
-        <div class="iframe_wrapper" :style="{ translate: `${currentOffset.x}px ${currentOffset.y}px` }">
+        <div class="iframe_wrapper">
             <p v-if="gameId !== '-1' && shouldShow">Loading...</p>
             <p v-if="gameId === '-1' && shouldShow">Game Unavailable</p>
             <iframe v-if="shouldShow" id="gameFrame" class="amG4g" :src="iframeSource" loading="eager" frameborder="0"

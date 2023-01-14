@@ -26,7 +26,6 @@ h4 {
 a {
     font-size: 1em;
     border-radius: var(--border-radius);
-    margin-bottom: var(--margin-bottom);
     display: inline-block;
     text-decoration: none;
     font-weight: 600;

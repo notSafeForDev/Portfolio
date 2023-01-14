@@ -1,19 +1,35 @@
+button,
 .button {
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+}
+
+.text_button {
+    height: 50px;
+    background-color: var(--shadow);
+    color: var(--white);
+}
+
+.text_button:hover {
+    color: var(--red);
+}
+
+.mobile_button {
     padding: 6px 30px;
     margin: 30px;
     border-radius: var(--border-radius);
     background-color: var(--red);
     color: var(--white);
     font-size: 1.5em;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 0.2em;
     transition: all 0.1s;
     translate: 0 -5px;
     filter: drop-shadow(0px -12px 0px var(--dark-red)) drop-shadow(0px 25px 10px var(--shadow));
 }
 
-.button:hover {
+.mobile_button:hover {
     translate: 0 -12px;
     filter: drop-shadow(0px -6px 0px var(--dark-red)) drop-shadow(0px 25px 10px var(--shadow));
     background-color: var(--muted-red);

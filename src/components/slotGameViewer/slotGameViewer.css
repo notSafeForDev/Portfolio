@@ -52,8 +52,9 @@
 }
 
 .slot_game_viewer iframe {
-    width: 90vw;
-    height: 50.625vw;
+    width: 120vh;
+    height: 67.5vh;
+    max-width: 90vw;
     max-height: 80vh;
     border-radius: var(--border-radius);
 }

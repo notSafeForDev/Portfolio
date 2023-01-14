@@ -29,6 +29,7 @@ export default {
                 allowfullscreen></iframe>
             <img src="@/assets/images/phone_overlay.png" />
         </div>
-        <a :title="'more about ' + name" :href="artStationUrl" target="_blank" class="button centered">More</a>
+        <a :title="'more about ' + name" :href="artStationUrl" target="_blank"
+            class="button mobile_button centered">More</a>
     </div>
 </template>

@@ -13,8 +13,6 @@ type thumbnail = {
     imageUrlSuffix: string
 }
 
-type position = { x: number, y: number }
-
 export default {
     components: {
         Thumbnail,
@@ -35,36 +33,34 @@ export default {
             { title: "Net Gains", publisher: "relax", id: "netgains", hrefSuffix: "net-gains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
         ];
 
-        let openOffset: position = { x: 0, y: 0 }
-
         return {
             countLimit: Infinity,
+            isExpanded: false,
             thumbnails,
             shouldShowGame: false,
             gameName: "",
             publisher: "yggdrasil" as publisher,
-            gameId: "",
-            openOffset
+            gameId: ""
         }
     },
     methods: {
         onResize() {
-            this.countLimit = window.innerWidth <= 460 ? 4 : Infinity;
+            this.countLimit = (window.innerWidth <= 460 && this.isExpanded === false) ? 4 : Infinity;
         },
-        onThumbnailClick(thumbnail: thumbnail, e: PointerEvent) {
+        onThumbnailClick(thumbnail: thumbnail) {
             this.shouldShowGame = true;
             this.gameName = thumbnail.title;
             this.publisher = thumbnail.publisher;
             this.gameId = thumbnail.id;
-            this.openOffset = {
-                x: (e.clientX - (window.innerWidth / 2)) * 4,
-                y: (e.clientY - (window.innerHeight / 2)) * 4
-            };
         },
         onSlotGameViewerClose() {
             this.shouldShowGame = false;
             this.gameName = "";
             this.gameId = "";
+        },
+        onShowMoreGamesButtonClick() {
+            this.isExpanded = true;
+            this.countLimit = Infinity;
         }
     },
     mounted() {
@@ -84,10 +80,10 @@ export default {
         <div class="grid">
             <Thumbnail v-for="thumbnail in thumbnails.slice(0, countLimit)" :title="thumbnail.title"
                 :image-src="'https://ik.imagekit.io/leovegas/lv/games/' + thumbnail.imageUrlSuffix"
-                @click="onThumbnailClick(thumbnail, $event)" />
-            <p v-if="countLimit < Infinity" class="centered">{{
-                "And " + (thumbnails.length - countLimit) + " More..."
-            }}</p>
+                @click="onThumbnailClick(thumbnail)" />
+            <button v-if="countLimit < Infinity && !isExpanded" class="text_button"
+                @click="onShowMoreGamesButtonClick">{{ "And " + (thumbnails.length - countLimit) + " More..." }}
+            </button>
         </div>
         <p>I started working for Yggdrasil Gaming, creating online casino games in 2019. I got called the "Particle
             Man" at one point, due to my "expertize" with particle effects. Among particles, I worked on a lot of the
@@ -106,6 +102,6 @@ export default {
             { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
         ]" />
         <SlotGameViewer :should-show="shouldShowGame" :game-name="gameName" :publisher="publisher" :game-id="gameId"
-            :open-offset="openOffset" @onClose="onSlotGameViewerClose" />
+            @onClose="onSlotGameViewerClose" />
     </div>
 </template>
