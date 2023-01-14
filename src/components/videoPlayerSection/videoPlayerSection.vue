@@ -23,7 +23,8 @@ export default {
             for the task at hand.</p>
         <p>After quickly realizing that Unity didn't load quite fast enough on the web, I ended up learning Babylon.js,
             and the rest is history.</p>
-        <p>The video player even supports theHandy, an interactive sex toy that syncs with the video content.</p>
+        <p>The player can be found live at <a title="fuckpassvr website" href="https://www.fuckpassvr.com/" target="_blank">fuckpassvr.com</a>.</p>
+        <p>It even supports <a href="https://www.thehandy.com/" target="_blank">theHandy</a>, an interactive sex toy that syncs with the video content.</p>
         <TechnologiesList :items="[
             { name: 'Babylon.js', description: '3D & XR rendering engine', link: 'https://www.babylonjs.com/' },
             { name: 'Typescript', description: 'Superset of Javascript', link: 'https://www.typescriptlang.org/' },

@@ -22,7 +22,7 @@ export default {
         </div>
         <p>I studied game design from 2012 to 2015. The following year I started developing mobile phone games along
             with my cousin and a friend of his.</p>
-        <p>We ended up releasing Coco Roll on iOS and Android. Whereas Snake+ stayed in the prototype stages.</p>
+        <p>We ended up releasing Coco Roll for iOS and Android. Whereas Snake+ stayed in the prototype stages.</p>
         <div class="spacer_small"></div>
         <TechnologiesList :items="[
             { name: 'Unity', description: '2D & 3D game engine', link: 'https://unity.com/' },
