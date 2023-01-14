@@ -14,7 +14,8 @@ export default {
         <img
             src="https://fuckpassvr.nyc3.cdn.digitaloceanspaces.com/uploads/scene/FPVR0034/thumbnail/thumbnails/JazminLuv-MikeMancini_001.jpg" />
         <web-vr-video-player class="video_player_player"
-            coverimage="https://fuckpassvr.nyc3.cdn.digitaloceanspaces.com/uploads/scene/FPVR0034/thumbnail/thumbnails/JazminLuv-MikeMancini_001.jpg">
+            coverimage="https://fuckpassvr.nyc3.cdn.digitaloceanspaces.com/uploads/scene/FPVR0034/thumbnail/thumbnails/JazminLuv-MikeMancini_001.jpg"
+            hapticscsv="https://video-player.nyc3.digitaloceanspaces.com/trailers/JazminLuv-MikeMancini-180-POV-FPVR-TRAILER_2k.csv">
             <source
                 src="https://video-player.nyc3.digitaloceanspaces.com/trailers/JazminLuv-MikeMancini-180-POV-FPVR-TRAILER_2k.mp4"
                 data-quality="2K" enableScrollToZoom="false" />
