@@ -14,7 +14,7 @@ export default {
             <div class="spacer_large"></div>
         </div>
         <h2>Flash Toy Sync</h2>
-        <h3>2020 / 2022</h3>
+        <h3>2020 / 2021</h3>
         <ImageLink title="flash toy sync" href="https://imgur.com/a/lkGZJ4z" src="https://i.imgur.com/loT4QVr.png">
             <Sticker text="18+ Adult Only" />
         </ImageLink>
