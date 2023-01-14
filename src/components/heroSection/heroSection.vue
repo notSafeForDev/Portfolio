@@ -22,6 +22,7 @@ export default {
         <div class="spacer_medium"></div>
         <p>I'm Tobias Rheindorf, a developer that really gives it all for exciting projects!</p>
         <p>This site was built from scratch, as a fully responsive website using the <a href="https://vuejs.org/">Vue
-                Framework</a>.</p>
+                Framework</a>. The source code can be found on <a href="https://github.com/notSafeForDev/portfolio"
+                target="_blank">Github</a>.</p>
     </div>
 </template>
