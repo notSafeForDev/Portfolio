@@ -12,7 +12,7 @@ export default {
         <div class="main_cell centered_vertically">
             <h1>Tobias Rheindorf</h1>
             <h4>AKA notSafeForDev</h4>
-            <h4>Frontend & Game Developer</h4>
+            <h4>Frontend- & Game Developer</h4>
         </div>
         <div>
             <ProfilePicture image-url="portrait.jpg" />
