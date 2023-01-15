@@ -9,7 +9,8 @@ export default {
         shouldShow: { type: Boolean, required: true },
         publisher: { type: String as PropType<publisher>, required: true },
         gameName: { type: String, required: true },
-        gameId: { type: String, required: true }
+        gameId: { type: String, required: true },
+        youtubeVideoId: { type: String, required: false }
     },
     emits: {
         onClose() { }
@@ -21,6 +22,10 @@ export default {
     },
     computed: {
         iframeSource() {
+            if (this.youtubeVideoId !== undefined) {
+                return "https://www.youtube.com/embed/" + this.youtubeVideoId;
+            }
+
             if (this.publisher === "yggdrasil") {
                 return "https://staticpff.yggdrasilgaming.com/init/launchClient.html?gameid=" + this.gameId + "&amp;lang=en&amp;currency=&amp;org=leovegas&amp;key=&amp;channel=pc&amp;skin=leovegas";
             } else {

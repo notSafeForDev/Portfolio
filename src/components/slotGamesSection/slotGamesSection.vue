@@ -9,8 +9,8 @@ type thumbnail = {
     title: string,
     publisher: publisher,
     id: string,
-    hrefSuffix: string,
-    imageUrlSuffix: string
+    imageUrlSuffix: string,
+    youtubeVideoId?: string
 }
 
 export default {
@@ -21,16 +21,16 @@ export default {
     },
     data() {
         let thumbnails: thumbnail[] = [
-            { title: "Jackpot Raiders", publisher: "yggdrasil", id: "7361", hrefSuffix: "jackpot-raiders", imageUrlSuffix: "X0LjA0151/ndD1rt8M1dbDBA-opt.jpg" },
-            { title: "Aldo's Journey", publisher: "yggdrasil", id: "-1", hrefSuffix: "aldo-s-journey", imageUrlSuffix: "DlVZLmrwP/abblUr741Zjrr-opt.jpg" },
-            { title: "Lucky Neko Gigablox", publisher: "yggdrasil", id: "10124", hrefSuffix: "lucky-neko-gigablox", imageUrlSuffix: "jJy5A9V7E/yBd3vUaKdAEQ7E.jpg" },
-            { title: "Hades Gigablox", publisher: "yggdrasil", id: "10125", hrefSuffix: "hades-gigablox", imageUrlSuffix: "aeMR9gj3r/rleGulrxw0KDj.jpg" },
-            { title: "Easter Island 2", publisher: "yggdrasil", id: "7396", hrefSuffix: "easter-island-2", imageUrlSuffix: "LGX1jxxql/dLJMfjQp44EPA.jpg" },
-            { title: "Cluster Tumble", publisher: "relax", id: "clustertumble", hrefSuffix: "cluster-tumble", imageUrlSuffix: "VPP79vmxm/Q3xQCMMeDDrN8.jpg" },
-            { title: "Beast Mode", publisher: "relax", id: "beastmode", hrefSuffix: "beast-mode", imageUrlSuffix: "1D9BoP3KN/3vO7Hx7dkJWPD.jpg" },
-            { title: "Temple Tumble 2 Dream Drop", publisher: "relax", id: "templetumble2dd", hrefSuffix: "temple-tumble-2-dream-drop", imageUrlSuffix: "MqXY5yA4v/BpB4txMdpxnKX.jpg" },
-            { title: "Dead Riders Trail", publisher: "relax", id: "deadriderstrail", hrefSuffix: "dead-riders-trail", imageUrlSuffix: "bvnQwl93X/Ll0QHldvJrYEN.jpg" },
-            { title: "Net Gains", publisher: "relax", id: "netgains", hrefSuffix: "net-gains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
+            { title: "Jackpot Raiders", publisher: "yggdrasil", id: "7361", imageUrlSuffix: "X0LjA0151/ndD1rt8M1dbDBA-opt.jpg" },
+            { title: "Aldo's Journey (Video)", publisher: "yggdrasil", id: "-1", imageUrlSuffix: "DlVZLmrwP/abblUr741Zjrr-opt.jpg", youtubeVideoId: "g5Az3djzMB4" },
+            { title: "Lucky Neko Gigablox", publisher: "yggdrasil", id: "10124", imageUrlSuffix: "jJy5A9V7E/yBd3vUaKdAEQ7E.jpg" },
+            { title: "Hades Gigablox", publisher: "yggdrasil", id: "10125", imageUrlSuffix: "aeMR9gj3r/rleGulrxw0KDj.jpg" },
+            { title: "Easter Island 2", publisher: "yggdrasil", id: "7396", imageUrlSuffix: "LGX1jxxql/dLJMfjQp44EPA.jpg" },
+            { title: "Cluster Tumble", publisher: "relax", id: "clustertumble", imageUrlSuffix: "VPP79vmxm/Q3xQCMMeDDrN8.jpg" },
+            { title: "Beast Mode", publisher: "relax", id: "beastmode", imageUrlSuffix: "1D9BoP3KN/3vO7Hx7dkJWPD.jpg" },
+            { title: "Temple Tumble 2 Dream Drop", publisher: "relax", id: "templetumble2dd", imageUrlSuffix: "MqXY5yA4v/BpB4txMdpxnKX.jpg" },
+            { title: "Dead Riders Trail", publisher: "relax", id: "deadriderstrail", imageUrlSuffix: "bvnQwl93X/Ll0QHldvJrYEN.jpg" },
+            { title: "Net Gains", publisher: "relax", id: "netgains", imageUrlSuffix: "aeXNXxrML/5WaQSkMaMWkOA.jpg" }
         ];
 
         return {
@@ -40,7 +40,8 @@ export default {
             shouldShowGame: false,
             gameName: "",
             publisher: "yggdrasil" as publisher,
-            gameId: ""
+            gameId: "",
+            youtubeVideoId: undefined as (string | undefined)
         }
     },
     methods: {
@@ -52,11 +53,13 @@ export default {
             this.gameName = thumbnail.title;
             this.publisher = thumbnail.publisher;
             this.gameId = thumbnail.id;
+            this.youtubeVideoId = thumbnail.youtubeVideoId
         },
         onSlotGameViewerClose() {
             this.shouldShowGame = false;
             this.gameName = "";
             this.gameId = "";
+            this.youtubeVideoId = undefined
         },
         onShowMoreGamesButtonClick() {
             this.isExpanded = true;
@@ -102,6 +105,6 @@ export default {
             { name: 'Redux-Saga', description: 'Used to create the asynchronous game flows', link: 'https://redux-saga.js.org/' }
         ]" />
         <SlotGameViewer :should-show="shouldShowGame" :game-name="gameName" :publisher="publisher" :game-id="gameId"
-            @onClose="onSlotGameViewerClose" />
+            :youtube-video-id="youtubeVideoId" @onClose="onSlotGameViewerClose" />
     </div>
 </template>
