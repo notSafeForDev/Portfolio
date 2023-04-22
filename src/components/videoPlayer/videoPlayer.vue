@@ -11,10 +11,9 @@ export default {
 
 <template>
     <div class="video_player">
-        <img
-            src="https://fuckpassvr.nyc3.cdn.digitaloceanspaces.com/uploads/scene/FPVR0034/thumbnail/thumbnails/JazminLuv-MikeMancini_001.jpg" />
+        <img src="https://nyc3.digitaloceanspaces.com/video-player/trailers/JazminLuv-MikeMancini_001.jpg" />
         <web-vr-video-player class="video_player_player"
-            coverimage="https://fuckpassvr.nyc3.cdn.digitaloceanspaces.com/uploads/scene/FPVR0034/thumbnail/thumbnails/JazminLuv-MikeMancini_001.jpg"
+            coverimage="https://nyc3.digitaloceanspaces.com/video-player/trailers/JazminLuv-MikeMancini_001.jpg"
             hapticscsv="https://video-player.nyc3.digitaloceanspaces.com/trailers/JazminLuv-MikeMancini-180-POV-FPVR-TRAILER_2k.csv">
             <source
                 src="https://video-player.nyc3.digitaloceanspaces.com/trailers/JazminLuv-MikeMancini-180-POV-FPVR-TRAILER_2k.mp4"
